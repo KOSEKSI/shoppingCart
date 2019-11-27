@@ -1,0 +1,73 @@
+<script> 
+
+  
+// Declare two array 
+
+const array1 = [{"id":7},{"id":8}]; 
+
+const array2 = [{"id":6},{"id":7},{"id":8},{"id":9}]; 
+
+  
+// Function definiton with passing two arrays 
+
+function findCommonElement(array1, array2) { 
+
+      
+var arary=[];
+    // Loop for array1 
+
+    for(let i = 0; i < array1.length; i++) { 
+
+          
+
+        // Loop for array2 
+
+        for(let j = 0; j < array2.length; j++) { 
+
+              
+
+            // Compare the element of each and 
+
+            // every element from both of the 
+
+            // arrays 
+
+            if(array1[i].id === array2[j].id) { 
+
+              
+
+                // Return if common element found 
+
+               arary.push(array1[i].id)
+               
+
+            } 
+
+        } 
+
+    } 
+
+      
+
+    // Return if no common element exist 
+
+    return arary
+} 
+
+  var modarray=[];
+document.write(findCommonElement(array1, array2))
+findCommonElement(array1,array2).forEach(item=> {
+modarray.push(...removeItem(item));
+});
+
+function removeItem(item){
+var filtered = array1.filter((value, index, arr)=>{
+
+    return value.id == item;
+
+})
+return filtered;
+}
+
+document.write(modarray);
+</script>  
